@@ -24,7 +24,7 @@ jwtSecret=
 3. Set up the values of the two fields with your own MongoDB connection URI and your own JWT secret key.
 
 ## MongoDB Schemas and Entity Relationship Diagram
-<img alt="DesignDB" src="https://raw.githubusercontent.com/nurultrsa/backend-project2/main/img/ERD2.png">
+<img alt="DesignDB" src="https://raw.githubusercontent.com/nurultrsa/backend-project/main/img/ERD2.png">
 
 ## Documentation for API Endpoints
 ## Auth service
