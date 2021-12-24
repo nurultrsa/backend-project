@@ -28,23 +28,165 @@ jwtSecret=
 
 ## Documentation for API Endpoints
 ## Auth service
-| Method               | Description                              | Required Body Fields | Authentication |
+- Header : application/json (accept)
+
+| Method               | Description                              | Body Fields          | Authentication |
 | -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | GET /auth            | Get details of logged in users info      |                      | **required**   |
+
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string",
+    "data" : {
+         "id" : "string, unique",
+         "name" : "string",
+         "email" : "string",
+         "password" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+}
+```
+
+- Header : application/json (accept, content-type)
+
+| Method               | Description                              | Required Body Fields | Authentication |
+| -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | POST /auth           | Returns user authentication and token    | `email, password`    | not required   |
 
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string",
+    "data" : {
+         "id" : "string, unique",
+         "email" : "string",
+         "password" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+}
+```
+
 ## Contacts service
+- Header : application/json (accept)
+
 | Method               | Description                              | Required Body Fields | Authentication |
 | -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | GET /contacts        | Get all the contacts of logged in user   |                      | **required**   |
+
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string",
+    "data" : {
+         "id" : "string, unique",
+         "name" : "string",
+         "email" : "string, unique",
+         "phone" : "string, unique",
+         "type" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+     {
+         "id" : "string, unique",
+         "name" : "string",
+         "email" : "string, unique",
+         "phone" : "string, unique",
+         "type" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+}
+```
+
+- Header : application/json (accept, content-type)
+
+| Method               | Description                              | Required Body Fields | Authentication |
+| -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | POST /contacts       | Add a new contact for user               | `name, email, phone, type`| **required**   |
+
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string",
+    "data" : {
+         "id" : "string, unique",
+         "name" : "string",
+         "email" : "string, unique",
+         "phone" : "string, unique",
+         "type" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+}
+```
+
+- Header : application/json (accept, content-type)
+
+| Method               | Description                              | Required Body Fields | Authentication |
+| -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | PUT /contacts/:id    | Update a contact for logged in user      | `name, email, phone, type`| **required**   |
+
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string",
+    "data" : {
+         "id" : "string, unique",
+         "name" : "string",
+         "email" : "string, unique",
+         "phone" : "string, unique",
+         "type" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+}
+```
+
+- Header : application/json (accept)
+
+| Method               | Description                              | Required Body Fields | Authentication |
+| -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | DELETE /contacts/:id | Delete a contact for logged in user      |                      | **required**   |
 
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string"
+}
+```
+
+
 ## Users service
+- Header : application/json (accept, content-type)
+
 | Method               | Description                              | Required Body Fields | Authentication |
 | -------------------- | ---------------------------------------- | -------------------- | -------------- |
 | POST /users          | Register a user and generate JWT token   | `name, email, password`| not required   |
+
+Response:
+```bash
+{
+    "code" : "number",
+    "status" : "string",
+    "data" : {
+         "id" : "string, unique",
+         "name" : "string",
+         "email" : "string",
+         "password" : "string",
+         "createdAt" : "date",
+         "updatedAt" : "date"
+     }
+}
+```
 
 ### Folder Structure
 
